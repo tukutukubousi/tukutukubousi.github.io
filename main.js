@@ -4,7 +4,7 @@ $(window).on('load', function () {
 
   $("#splash").delay(1500).fadeOut('slow', function () {//splashエリアを1.5秒でフェードアウト
 
-    $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
+    $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与する
 
   });
 
