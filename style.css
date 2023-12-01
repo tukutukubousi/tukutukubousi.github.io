@@ -1,118 +1,413 @@
-<!DOCTYPE html>
-<html lang="ja">
+/* ローディング画面*/
+#splash {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  background: #333;
+  text-align: center;
+  color: #fff;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>松永はかり製作所|トラックスケール</title>
-  <link rel="stylesheet" href="css/style.css">
+#splash-logo img {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-</head>
+.logo img {
+  width: 300px;
+}
 
-<body>
-  <!-- ローディング画面時の画像 -->
-  <div id="splash">
-    <div id="splash-logo"><img src="pic/トラック.png"></div>
-  </div>
-  <div class="splashbg"></div>
-  <div id="container">
-    <!-- 画面遷移用のクラス -->
-    <header>
+/*画面遷移アニメーション*/
+.splashbg {
+  display: none;
+}
 
-      <nav>
-        <div class="parent">
-          <div class="child1">
-            <a href="#" class="logo">
-              <img src="pic/hakari_logo.gif">
-            </a>
-          </div>
-          <div class="child2">
-            <h1>0944-57-5104</h1>
-            <p>(日曜・祝日除く)</p>
-          </div>
-        </div>
-        <!-- ナビゲーション -->
-        <div class="menu-group">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="seihin.html">製品案内</a></li>
-            <li><a href="support.html">サポート</a></li>
-            <li><a href="rental.html">レンタル</a></li>
-            <li><a href="gaiyou.html">会社概要</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
-          </ul>
-        </div>
-      </nav>
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg {
+  display: block;
+  content: "";
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform: scaleY(0);
+  background-color: #ea2020;
+  /*伸びる背景色の設定*/
+  animation-name: PageAnime;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
 
-    </header>
-    <main>
-      <!-- メイン画像 -->
-      <div class="honsya">
-        <img src="pic/松永はかり.png">
-      </div>
+@keyframes PageAnime {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+
+  50% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+
+  50.001% {
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+
+/*画面遷移の後現れる設定*/
+#container {
+  opacity: 0;
+}
 
 
-      <h2>トラックスケール</h2>
-      <div class="container">
-        <div class="track">
-          <p><a href="seihin.html #umekomi">埋込設置型</a></p>
-          <p><a href="seihin.html #tizyou">地上設置型</a></p>
-          <p><a href="seihin.html #フロアA型">フロアーA型</a></p>
-          <p><a href="seihin.html #フロアB型">フロアーB型</a></p>
-          <p><a href="seihin.html #sizi">各種指示計</a></p>
-          <p><a href="seihin.html #option">オプション</a></p>
-        </div>
-        <div class="png">
-          <img src="pic/トラックpng.png" width="200" height="200">
-        </div>
-      </div>
 
-      <h2>コンピューター計量システム</h2>
-      <div class="container">
-        <div class="track">
-          <p><a href="seihin.html #kanri">計量販売管理システム（タッチパネル式）</a></p>
-          <p><a href="seihin.html #deta">計量データログ管理システム</a></p>
-          <p><a href="seihin.html #paneru">パネルコンピュータ計量操作システム</a></p>
-          <p><a href="seihin.html #net">ネットワーク型計量販売管理システム</a></p>
-        </div>
-        <div class="png">
-          <img src="pic/パソコン.png" width="200" height="200">
-        </div>
-      </div>
-      <h2>その他</h2>
-      <div class="container">
-        <div class="track">
-          <p><a href="seihin.html #idou">移動型計重機</a></p>
-          <p><a href="seihin.html #digital">デジタル台はかり</a></p>
-          <p><a href="seihin.html #rora">ローラーコンベア付デジタル台はかり</a></p>
-          <p><a href="seihin.html #frame">フレームワークスケール</a></p>
-          <p><a href="seihin.html #tokusyu">特殊はかり　類</a></p>
-          <p><a href="seihin.html #">基準器</a></p>
-        </div>
-        <div class="png">
-          <img src="pic/その他.png" width="200" height="200">
-        </div>
-      </div>
-      <h2>サポート</h2>
-      <div class="container">
-        <div class="track">
-          <p><a href="support.html #kentei">検定</a></p>
-          <p><a href="support.html #teiki">定期検査（法的検査）</a></p>
-          <p><a href="support.html #syuuri">修理</a></p>
-          <p><a href="support.html #tenken">自主点検（任意検査）</a></p>
-          <p><a href="support.html #sonota">その他計量器カスタマイズ</a></p>
-        </div>
-        <div class="png">
-          <img src="pic/サポート.png" width="200" height="200">
-        </div>
-      </div>
-      <footer> &copy; 株式会社 松永はかり製作所</footer>
-    </main>
-  </div>
-  <!-- 画面遷移用 -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="js/main.js"></script>
-</body>
 
-</html>
+/*bodyにappearクラスがついたら出現*/
+body.appear #container {
+  animation-name: PageAnimeAppear;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes PageAnimeAppear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+nav ul {
+  display: table;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #454f59;
+  width: 800px;
+  height: 50px;
+}
+
+nav li {
+  display: table-cell;
+  min-width: 50px;
+}
+
+nav a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  padding-bottom: 5px;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+}
+
+nav li:hover {
+  background-color: #ea2020;
+  border-radius: 8px;
+}
+
+.menu-group {
+  margin-bottom: 20px;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.child2 h1 {
+  margin: 0;
+  color: #ea2020;
+  position: relative;
+}
+
+.child2 h1:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(-50%);
+  left: -24px;
+  width: 1.3em;
+  height: 1.3em;
+  background-image: url(../pic/電話の受話器のアイコン素材.png);
+}
+
+
+.child2 p {
+  margin: 0;
+  text-align: center;
+}
+
+/* 大見出し */
+h2 {
+  padding: 0 0.5em;
+  color: #fff;
+  background-color: #36ae37;
+  font-size: 24px;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  margin-bottom: 4px;
+}
+
+/* 小見出し */
+h3 {
+  color: #494949;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  padding: 0.3em;
+  margin-bottom: 4px;
+}
+
+h3::before {
+  content: "▼";
+  color: #36ae37;
+}
+
+.triangle::before {
+  content: "●";
+  color: #36ae37;
+}
+
+/* ホーム */
+
+.honsya img {
+  width: 800px;
+  height: 500px;
+}
+
+.honsya .inner {
+  position: absolute;
+  width: 100%;
+  background-color: rgb(0, 0, 0, .5);
+  font-size: 32px;
+  color: #fff;
+}
+
+
+.track {
+  margin-left: 20px;
+}
+
+.track a {
+  text-decoration: none;
+  color: #333;
+}
+
+.track a:hover {
+  color: #ea2020;
+  text-decoration: underline;
+}
+
+.track p {
+  font-size: 20px;
+  font-weight: bolder;
+  width: 400px;
+}
+
+.container {
+  display: flex;
+  gap: 32px;
+}
+
+.png {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+/* 説明 */
+p {
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  margin: 4px 0;
+}
+
+/* 写真 */
+.picture {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  gap: 100px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.picture2 {
+  width: 292px;
+}
+
+.pic {
+  width: 40%;
+  margin: auto;
+  display: block;
+}
+
+/* オプション */
+.option {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-item {
+  flex: 1;
+  /* 要素を均等に割る */
+}
+
+/* お問い合わせ */
+#123 {
+  background-color: #000000;
+  font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 14px;
+  background-image: url(../img/bg_main.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#formWrap {
+  width: 100%;
+}
+
+.form_inner h3 {
+  font-size: 24px;
+  color: #00a0e9;
+  border-bottom: 1px solid #00a0e9;
+  padding-left: 6.25px;
+  padding-bottom: 12.5px;
+  margin-bottom: 50px;
+}
+
+.form_inner p {
+  margin: 25px 0;
+}
+
+.form_inner p a {
+  color: #00a0e9;
+}
+
+#formWrap {
+  width: 800px;
+  margin: 0 auto;
+  color: #555;
+  line-height: 150%;
+  font-size: 85%;
+}
+
+table.formTable {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+table.formTable td,
+table.formTable th {
+  border: 1px solid #ccc;
+  padding: 12.5px;
+}
+
+table.formTable th {
+  widows: 40%;
+  font-weight: normal;
+  background: #efefef;
+  text-align: right;
+}
+
+input,
+textarea {
+  padding: 6.25px 12.5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+}
+
+.form_require {
+  color: #ED1E79;
+  font-size: 12px;
+}
+
+/* フッター */
+footer {
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* 製品 */
+.link a {
+  display: inline-block;
+  color: #494949;
+  font-size: 120%;
+  transition: color .3s;
+}
+
+.link a:hover {
+  color: #00a0e9;
+}
+
+.red {
+  color: #ea2020;
+  font-weight: bold;
+}
+
+.ms {
+  color: #00a0e9;
+  font-weight: bolder;
+}
+
+/*infoエリアをはじめは非表示*/
+#info {
+  display: none;
+}
+
+/*モーダルの横幅を変更したい場合*/
+.modaal-container {
+  max-width: 600px;
+}
+
+/*モーダルのボタンの色を変更したい場合*/
+.modaal-close:after,
+.modaal-close:before {
+  background: #ccc;
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before {
+  background: #666;
+}
+
+table {
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+}
