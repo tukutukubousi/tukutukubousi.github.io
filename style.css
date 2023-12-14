@@ -71,9 +71,6 @@ body.appear .splashbg {
   opacity: 0;
 }
 
-
-
-
 /*bodyにappearクラスがついたら出現*/
 body.appear #container {
   animation-name: PageAnimeAppear;
@@ -114,7 +111,7 @@ nav ul {
 
 nav li {
   display: table-cell;
-  min-width: 50px;
+  min-width: 40px;
 }
 
 nav a {
@@ -123,7 +120,8 @@ nav a {
   text-decoration: none;
   color: #fff;
   padding-bottom: 5px;
-  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic",
+    メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
 }
 
 nav li:hover {
@@ -138,9 +136,7 @@ nav li:hover {
 .parent {
   display: flex;
   justify-content: space-between;
-
 }
-
 
 .child2 h1 {
   margin: 0;
@@ -149,7 +145,7 @@ nav li:hover {
 }
 
 .child2 h1:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   background-position: center;
@@ -162,7 +158,6 @@ nav li:hover {
   background-image: url(../pic/電話の受話器のアイコン素材.png);
 }
 
-
 .child2 p {
   margin: 0;
   text-align: center;
@@ -174,14 +169,16 @@ h2 {
   color: #fff;
   background-color: #36ae37;
   font-size: 24px;
-  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic",
+    メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
   margin-bottom: 4px;
 }
 
 /* 小見出し */
 h3 {
   color: #494949;
-  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic",
+    メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
   padding: 0.3em;
   margin-bottom: 4px;
 }
@@ -206,11 +203,10 @@ h3::before {
 .honsya .inner {
   position: absolute;
   width: 100%;
-  background-color: rgb(0, 0, 0, .5);
+  background-color: rgb(0, 0, 0, 0.5);
   font-size: 32px;
   color: #fff;
 }
-
 
 .track {
   margin-left: 20px;
@@ -244,7 +240,8 @@ h3::before {
 
 /* 説明 */
 p {
-  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic",
+    メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
   margin: 4px 0;
 }
 
@@ -282,7 +279,10 @@ p {
 /* お問い合わせ */
 #123 {
   background-color: #000000;
-  font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana,
+    Roboto, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic",
+    "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ",
+    Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 14px;
   background-image: url(../img/bg_main.jpg);
   background-position: center top;
@@ -348,17 +348,18 @@ textarea {
   -o-border-radius: 5px;
   -ms-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
 }
 
 .form_require {
-  color: #ED1E79;
+  color: #ed1e79;
   font-size: 12px;
 }
 
 /* フッター */
 footer {
-  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic",
+    メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
   text-align: center;
   padding-top: 20px;
 }
@@ -368,7 +369,7 @@ footer {
   display: inline-block;
   color: #494949;
   font-size: 120%;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
 .link a:hover {
@@ -409,5 +410,49 @@ footer {
 }
 
 table {
-  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic",
+    メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+}
+
+/* レスポンシブ対応 */
+@media only screen and (max-width: 667px) {
+  .logo img {
+    width: 180px;
+    height: 50px;
+  }
+  .child2 h1 {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+
+  .child2 h1:before {
+    transform: translateY(-50%);
+    left: -18px;
+    width: 1em;
+    height: 1em;
+  }
+
+  .child2 h1 {
+    font-size: 16px;
+  }
+
+  .child2 p {
+    font-size: 10px;
+    margin-right: 20px;
+  }
+  .menu-group ul {
+    width: 370px;
+  }
+
+  .menu-group li {
+    font-size: 10px;
+  }
+
+  .picture {
+    flex-flow: column;
+  }
+
+  .container p {
+    font-size: 16px;
+  }
 }
